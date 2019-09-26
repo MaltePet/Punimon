@@ -10,6 +10,9 @@
           <e p="MovementControl.cs" t="Include" />
           <e p="PlayerLayerController.cs" t="Include" />
           <e p="PlayerMovement.cs" t="Include" />
+          <e p="TileInteractive" t="Include">
+            <e p="PathTile.cs" t="Include" />
+          </e>
         </e>
       </e>
       <e p="obj" t="ExcludeRecursive" />
