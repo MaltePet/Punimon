@@ -33,4 +33,26 @@ public class PlayerMovement : MonoBehaviour
     {
         _rigidbody.MovePosition(_rigidbody.position + Time.fixedDeltaTime * _moveSpeed * _movement);
     }
+    
+    // when the GameObjects collider arrange for this GameObject to travel to the left of the screen
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.gameObject.tag.Equals("Door"))
+        {
+            // It's a door!
+            DoorBehaviour doorBehaviour = col.gameObject.GetComponent<DoorBehaviour>();
+            doorBehaviour.OpenScene();
+        }
+        else
+        {
+            Debug.Log("Else: " + col.gameObject.tag); 
+            Debug.Log(col.gameObject.name);
+        }
+    }
+    
+    // called when the cube hits the floor
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        Debug.Log("OnCollisionEnter2D");
+    }
 }
